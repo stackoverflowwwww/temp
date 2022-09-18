@@ -111,7 +111,7 @@ def validate(
         logger.info(" * class [{}] IoU {:.2f}".format(i, iou * 100))
 
     return mIoU        
-cfg = yaml.load(open("config_test.yaml", "r"), Loader=yaml.Loader)
+cfg = yaml.load(open("./temp/config_test.yaml", "r"), Loader=yaml.Loader)
 loader=builder.build_vocloader("val",cfg,distributed=False)
 loader_iter=iter(loader)
 model = ModelBuilder(cfg["net"])
